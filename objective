@@ -1,0 +1,10 @@
+#!/usr/bin/env coffee
+
+require('nez').objective 'notice-example', 
+
+    assignTo: 'me'
+    description: """
+
+    exploring notification use cases
+
+    """, (Requirement) -> 
