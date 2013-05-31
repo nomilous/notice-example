@@ -8,14 +8,6 @@
       "remote.origin.url": "git@github.com:nomilous/notice-example.git",
       "HEAD": "refs/heads/master",
       "version": "ROOT_REPO_REF"
-    },
-    {
-      "root": false,
-      "workDir": "./node_modules/notice",
-      "packageManager": "npm",
-      "remote.origin.url": "git@github.com:nomilous/notice.git",
-      "HEAD": "refs/heads/develop",
-      "version": "7e76d66bef1bebcb6e0c2d4002e1ff1b2bd2bf1f"
     }
   ]
 }

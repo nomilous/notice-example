@@ -12,7 +12,7 @@
   ],
   "repository": "git@github.com:nomilous/notice-example.git",
   "dependencies": {
-    "notice": "0.0.2"
+    "notice": "0.0.3"
   },
   "devDependencies": {
     "nez": "0.0.7",
