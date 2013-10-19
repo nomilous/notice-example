@@ -1,3 +1,3 @@
-notice-example
-==============
+how to notice
+=============
 

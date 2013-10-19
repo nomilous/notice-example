@@ -1,7 +1,7 @@
 {
   "name": "notice-example",
   "private": "true",
-  "description": "exploring notification use cases",
+  "description": "how to notice",
   "version": "0.0.0",
   "author": "nomilous <nomilous@gmail.com>",
   "contributors": [
@@ -12,10 +12,12 @@
   ],
   "repository": "git@github.com:nomilous/notice-example.git",
   "dependencies": {
-    "notice": "0.0.3"
+    "notice": "0.0.11"
   },
   "devDependencies": {
-    "nez": "0.0.7",
-    "should": "~1.2.2"
+    "hound": "~1.0.4",
+    "should": "~2.0.1",
+    "coffee-script": "~1.6.3",
+    "mocha": "~1.13.0"
   }
 }
