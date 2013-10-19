@@ -11,11 +11,19 @@
     },
     {
       "root": false,
+      "workDir": "./node_modules/dinkum",
+      "packageManager": "npm",
+      "remote.origin.url": "git@github.com:nomilous/dinkum.git",
+      "HEAD": "refs/heads/develop",
+      "version": "70b5a04d1aa4961a867b7a1079564304690b7b9e"
+    },
+    {
+      "root": false,
       "workDir": "./node_modules/notice",
       "packageManager": "npm",
       "remote.origin.url": "git@github.com:nomilous/notice.git",
       "HEAD": "refs/heads/develop",
-      "version": "aa42aed0db8f8838d843ae76895eff2135255ff1"
+      "version": "88b1338ac315612282281ad90132e54eefbcf842"
     }
   ]
 }

@@ -12,7 +12,8 @@
   ],
   "repository": "git@github.com:nomilous/notice-example.git",
   "dependencies": {
-    "notice": "0.0.12"
+    "notice": "0.0.12",
+    "dinkum": "0.0.4"
   },
   "devDependencies": {
     "hound": "~1.0.4",
