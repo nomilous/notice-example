@@ -2,5 +2,5 @@
 
 require('./lib/hub').start( function(error) {
     process.stdout.write(error.stack + '\n');
-    process.exit(error.errno);
+    process.exit(error.errno || 1);
 })
