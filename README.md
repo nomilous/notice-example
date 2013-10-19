@@ -38,17 +38,9 @@ echo '{"order":"1x","neat json":"with values","and":"alhpabetical"}' | json
 
 ```
 
-### start hub and client in separate terminals
+Walkthrough
+-----------
 
-```bash
+1. define a hub
+2. [create and start a hub instance](https://github.com/nomilous/notice-example/commit/cbd24ea385ded5068e96fd8fc7b46682db056426)
 
-./hub
-
-```bash
-
-./client
-
-
-```
-
-next: [`./src`](./src)
