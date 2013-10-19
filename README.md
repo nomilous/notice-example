@@ -1,4 +1,4 @@
 how to notice
 =============
 
-go here `[./src]`](./src)
+go here [`./src`](./src)
