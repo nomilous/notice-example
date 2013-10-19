@@ -33,7 +33,7 @@ source ~/.bash_profile
 # pipe some json through the new alias
 #
 
-echo '{"order":"1x","neat json output":"with values","and":"sorted alhpabetically"}' | json
+echo '{"order":"1x","neat json":"with values","and":"alhpabetical"}' | json
 
 
 ```
