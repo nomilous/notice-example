@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+require('./lib/client').start( function(error) {
+    if( error ) {
+        process.stdout.write(error.stack + '\n');
+        process.exit(error.errno || 1);
+    }
+})

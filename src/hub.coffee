@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 {MessageBus} = require './server/message_bus'
 
 exports.start = (callback) -> 
@@ -16,6 +7,7 @@ exports.start = (callback) ->
         title: 'Message Bus Title'
         uuid: 1
         listen: 
+            secret:  '∆'
             adaptor: 'socket.io'
             port:     10001
 

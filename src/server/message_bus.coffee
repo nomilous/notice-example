@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 module.exports.MessageBus = require('notice').hub
     
     manager: 
@@ -19,11 +11,4 @@ module.exports.MessageBus = require('notice').hub
 
     error:
         keep: 100
-
-
-
-
-
-
-
 

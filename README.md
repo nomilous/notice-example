@@ -42,6 +42,3 @@ Walkthrough
 -----------
 
 1. start `./hub` and `./client` in separate terminals.
-2. [create and export the hub definition](https://github.com/nomilous/notice-example/commit/ab21abf4113eb59d80112f0ce8e73c7d11f767dd)
-3. [create and start a hub instance](https://github.com/nomilous/notice-example/commit/748cbae231cc7ae642e3c0d1b58d23ca10738b71)
-
