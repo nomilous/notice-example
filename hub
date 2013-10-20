@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 require('./lib/hub').start( function(error) {
     if( error ) {

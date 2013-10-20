@@ -31,6 +31,11 @@ exports.start = (callback) ->
 
                 (next, capsule, traveral) -> 
 
+
+                    capsule.controlCode = 'try to change it'
+                    console.log ALL: capsule.all
+                    console.log SERAILIZERS_SEE: capsule
+
                     return next.cancel() if capsule.$$control?
                     next()
 
@@ -48,6 +53,8 @@ exports.start = (callback) ->
                 """
 
                 (next, capsule, traversal) -> 
+
+                    console.log capsule
 
                     #
                     # do nothing, for now

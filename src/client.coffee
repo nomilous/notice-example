@@ -29,3 +29,19 @@ exports.start = (callback) ->
 
             return callback error if error?
 
+            emitter.use
+                title: 'put in a hidden control code'
+                (next, capsule, traversal) -> 
+                    capsule.set
+                        controlCode: 'XIIMVXVMIIX'
+                        hidden: true
+                        protected: true
+
+                    next()
+
+
+            setInterval (->
+
+                emitter.request 'text'
+
+            ), 1000
