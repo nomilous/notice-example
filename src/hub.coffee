@@ -135,12 +135,6 @@ exports.start = (callback) ->
 
                 (next, capsule, traveral) -> 
 
-
-                    # capsule.controlCode = 'try to change it'
-                    # console.log ALL: capsule.$$all
-                    # console.log SERAILIZERS_SEE: capsule
-                    # console.log UUID: capsule.$$uuid
-
                     return next.cancel() if capsule.$$control?
                     next()
 
@@ -164,8 +158,13 @@ exports.start = (callback) ->
                     # ---------------------------------------
                     # 
                     # * hidden properties on the capsule will not be included
-                    # * `capsule.$$set proertyName: 'value', hidden: true`
-                    # * `capsule.$$all` 
+                    # * capsule.$$set proertyName: 'value', hidden: true, protected: true
+                    # * capsule.$$all
+                    # * not listed by capsule.$$all
+                    #       * capsule.$$uuid
+                    #       * capsule.$$hidden
+                    #       * capsule.$$protected 
+                    # 
 
                     tools.elastic.put 
 
