@@ -50,6 +50,13 @@ exports.start = (callback) ->
             #  
             #        ie.  /v1/hubs/1/cache/persistedComponent/lazyLoadedObject/someThingInIt
             # 
+            #        (i ""think"" the mech that does the drilling will not disturb the neigh- 
+            #           bours on the way down, if not, something will need to be ""done"")
+            # 
+            #      * Also in the works (for some unknown future release) is that ability to
+            #        PUT/POST objects into the cache via the API, that obviously has sizeable
+            #        implications for this persistor.
+            # 
             #      * A last middleware could do the saving of any changes.
             #      * Or lazySave, if you know what i mean, this might be tricky
             #      * If anybody pulls this off i would love to see it / maybe incorperate it 
