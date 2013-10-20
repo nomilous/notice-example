@@ -104,6 +104,8 @@ exports.start = (callback) ->
                 # * Provides a configured instance of dinkum http(s) client assigned to
                 #   interface with the elasticsearch instance running on the localhost.
                 # 
+                # * Available to the middleware at traversal.tools.elastic
+                # 
                 # * Note - This will not fail if elastic is not running, that failure 
                 #          occurs when attempting to use the interface.
                 # 
@@ -150,20 +152,51 @@ exports.start = (callback) ->
 
             hub.use
 
-                title: 'hot swap slot'
+                title: 'example'
                 description: """
-                Second middleware to play with.
+                A second middleware to play with.
                 """
 
-                (next, capsule, traversal) -> 
-
-                    console.log capsule
+                (next, capsule, {tools, cache}) -> 
 
                     #
-                    # do nothing, for now
-                    #
+                    # insert the capsule (as-is) into elastic
+                    # ---------------------------------------
+                    # 
+                    # * hidden properties on the capsule will not be included
+                    # * `capsule.$$set proertyName: 'value', hidden: true`
+                    # * `capsule.$$all` 
 
-                    next()
+                    tools.elastic.put 
+
+                        path: '/test-database/test-table/id'
+                        'application/json': capsule
+                        #'application/json': capsule.$$all
+
+                        #
+                        # ask elastic for it
+                        # ------------------
+                        # 
+                        # curl -s :9200/test-database/test-table/id | json
+                        #
+
+
+                    .then (result) -> 
+
+
+                        #
+                        # store the response from elastic in the cache
+                        # --------------------------------------------
+                        # 
+                        # curl -u user: :20002/v1/hubs/1/cache/result
+                        #
+
+                        cache.result = result
+                        next()
+
+
+
+
 
 
 
