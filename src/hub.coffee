@@ -102,6 +102,16 @@ exports.start = (callback) ->
             # * Useful for remote monitoring of the tools
             # 
 
+
+
+            #
+            # GOOD: watch curl -su user: :20002/v1/hubs/1/tools/elastic/stats
+            # BAD:  watch curl -su user: :20002/v1/hubs/1/tools/elastic
+            # GOOD: watch curl -su user: :20002/v1/hubs/1/tools
+            #
+
+
+
             elastic: Client.create
 
                 #
@@ -169,7 +179,8 @@ exports.start = (callback) ->
 
             hub.use title: 'testing things', (next, capsule, {tools}) -> 
 
-                console.log tools['class-example']
+                #console.log tools['class-example']
+                #console.log tools.elastic
                 next()
 
 
