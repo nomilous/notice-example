@@ -80,7 +80,7 @@ exports.start = (callback) ->
             #   * I have suggested lazyloading because the cache could get quite big and the overhead
             #     when fetching it ahead of each capsule traversal would counter produce.
             # 
-            #   * Also, now exceedingly pleased i did this waffling, it birthed me steamingly fresh epiphany.
+            #   * Also, now exceedingly pleased i did this waffling, it birthed me a steamingly fresh epiphany.
             # 
             #         * A `Notability` API, ah man,, that tickles me so!
             #         * Examples below
@@ -167,7 +167,7 @@ exports.start = (callback) ->
 
 
 
-            hub.use title: 'tesing things', (next, capsule, {tools}) -> 
+            hub.use title: 'testing things', (next, capsule, {tools}) -> 
 
                 console.log tools['class-example']
                 next()
