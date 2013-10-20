@@ -21,7 +21,7 @@ exports.start = (callback) ->
             secret:             '∆'
             adaptor:            'socket.io'
             url:                'http://localhost:10001'
-            #url:                'http://localhost:10001'
+            #url:                'https://localhost:10001'
             errorWait:          1000
             rejectUnauthorized: false
 
@@ -45,3 +45,5 @@ exports.start = (callback) ->
                 emitter.request 'text', more: 'stuff'
 
             ), 1000
+
+            callback null, emitter

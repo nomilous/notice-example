@@ -1,9 +1,13 @@
-console.log('seconds grace (waiting for hub)')
+
+console.log('2 seconds grace (waiting for recomile / hub)');
 setTimeout( function(){
-    require('./lib/client').start( function(error) {
+    require('./lib/client').start( function(error, running) {
         if( error ) {
             process.stdout.write(error.stack + '\n');
             process.exit(error.errno || 1);
         }
+        console.log({
+            connection: running.connection
+        });
     })
 }, 1000);
