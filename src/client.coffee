@@ -45,6 +45,6 @@ exports.start = (callback) ->
 
                 emitter.request 'text', more: 'stuff'
 
-            ), 1000
+            ), 1
 
             callback null, emitter
