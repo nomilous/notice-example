@@ -71,7 +71,7 @@ exports.start = (callback) ->
             #   #      * If anybody pulls this off i would love to see it / maybe incorperate it 
             #   #  
             # 
-            #   * The thing that does the drilling will require a `way` to recognize the lazy 
+            #   * The thing that does the drilling will require a ` way ` to recognize the lazy 
             #     persisted component and asynchronize accordingly. 
             # 
             #     https://github.com/nomilous/notice/blob/master/src/management/manager.coffee#L156
@@ -80,6 +80,12 @@ exports.start = (callback) ->
             #   * I have suggested lazyloading because the cache could get quite big and the overhead
             #     when fetching it ahead of each capsule traversal would counter produce.
             # 
+            #   * Also, now exceedingly pleased i did this waffling, it birthed me steamingly fresh epiphany.
+            # 
+            #         * A `Notability` API, ah man,, that tickles me so!
+            #         * Examples below
+            #         * Still in swaddling tho
+            #  
 
             'preloaded-key': {}
 
@@ -122,6 +128,7 @@ exports.start = (callback) ->
                 # -------------------------------------------------------
                 # 
                 # * An class example to illustrate the notability api.
+                # * curl -su user: :20002/v1/hubs/1/tools/class-example/apiExposedFunction
                 #
 
                 new tools.NotableClass
@@ -159,6 +166,11 @@ exports.start = (callback) ->
 
 
 
+
+            hub.use title: 'tesing things', (next, capsule, {tools}) -> 
+
+                console.log tools['class-example']
+                next()
 
 
 
