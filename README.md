@@ -6,6 +6,10 @@ how to [notice](https://github.com/nomilous/notice)
 * `curl` - a commanline http client
 * `git`  - too much detail? 
 * `node` - the magic 
+* `elasticsearch` - also magic
+    * examples assume a localhosted instance of [elasticsearch](http://www.elasticsearch.org/) listening at 9200
+    * p.s. if you've not explored elasticsearch, i strongly recommend it jumping
+    * your todo queue
 
 ### clone and install this repo
 

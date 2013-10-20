@@ -1,4 +1,5 @@
 {MessageBus} = require './server/message_bus'
+{Client}     = require 'dinkum'
 
 exports.start = (callback) -> 
     
@@ -27,6 +28,7 @@ exports.start = (callback) ->
             # ### Purpose
             # 
             # * Provides a dynamic caching space accessable to middleware via traversal.cache
+            # * Solves the problem of hotswapped middleware not having access to a surrounding scope
             # * The same cache instance is passed into ALL traversals
             # * Visible over the api, making it ultra useful as an integration vector
             # 
@@ -84,9 +86,30 @@ exports.start = (callback) ->
 
             #
             # API: curl -u user: :20002/v1/hubs/1/tools
-            #
+            # -----------------------------------------
+            # 
+            # ### Purpose
+            # 
+            # * Exposes whatever a serialization of the tool instance returns onto the API.
+            # * Solves the scope problem for the particular case of tools required by middleware
+            # * Useful for remote monitoring of the tools
+            # 
 
-            'tool-instance': {}
+            elastic: Client.create
+
+                #
+                # API: curl -u user: :20002/v1/hubs/1/tools/elastic
+                # -------------------------------------------------
+                # 
+                # * Provides a configured instance of dinkum http(s) client assigned to
+                #   interface with the elasticsearch instance running on the localhost.
+                # 
+                # * Note - This will not fail if elastic is not running, that failure 
+                #          occurs when attempting to use the interface.
+                # 
+                
+                transport: 'http'
+                port: 9200
 
 
 
