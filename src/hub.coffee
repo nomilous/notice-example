@@ -1,5 +1,6 @@
 {MessageBus} = require './server/message_bus'
 {Client}     = require 'dinkum'
+{tools}      = require 'notice' # ...literally amuzing, ...figuratively notable
 
 exports.start = (callback) -> 
     
@@ -114,6 +115,23 @@ exports.start = (callback) ->
                 port: 9200
 
 
+            'class-example': 
+
+                #
+                # API: curl -u user: :20002/v1/hubs/1/tools/class-example
+                # -------------------------------------------------------
+                # 
+                # * An class example to illustrate the notability api.
+                #
+
+                new tools.NotableClass
+
+
+            'closure-example': 
+
+                tools.NotableClosure.create()
+
+
 
         (error, hub) -> 
 
@@ -195,7 +213,7 @@ exports.start = (callback) ->
 
 
 
-
+            callback null, hub
 
 
 

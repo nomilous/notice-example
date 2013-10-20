@@ -1,9 +1,12 @@
-console.log('moment\'s grace (waiting for recomile)');
+console.log('moment\'s grace (waiting for ?recomile)');
 setTimeout( function(){
-    require('./lib/hub').start( function(error) {
+    require('./lib/hub').start( function(error, hub) {
         if( error ) {
             process.stdout.write(error.stack + '\n');
             process.exit(error.errno || 1);
         }
+        console.log({
+            hub: hub.listening
+        });
     })
 }, 800);
