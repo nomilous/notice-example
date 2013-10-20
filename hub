@@ -1,7 +1,9 @@
-
-require('./lib/hub').start( function(error) {
-    if( error ) {
-        process.stdout.write(error.stack + '\n');
-        process.exit(error.errno || 1);
-    }
-})
+console.log('moment\'s grace (waiting for recomile)');
+setTimeout( function(){
+    require('./lib/hub').start( function(error) {
+        if( error ) {
+            process.stdout.write(error.stack + '\n');
+            process.exit(error.errno || 1);
+        }
+    })
+}, 800);

@@ -1,5 +1,4 @@
-
-console.log('2 seconds grace (waiting for recomile / hub)');
+console.log('moment\'s grace (waiting for ?recomile / hub)');
 setTimeout( function(){
     require('./lib/client').start( function(error, running) {
         if( error ) {
