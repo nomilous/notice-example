@@ -158,7 +158,7 @@ exports.start = (callback) ->
                     # ---------------------------------------
                     # 
                     # * hidden properties on the capsule will not be included
-                    # * capsule.$$set proertyName: 'value', hidden: true, protected: true
+                    # * capsule.$$set propertyName: 'value', hidden: true, protected: true
                     # * capsule.$$all
                     # * not listed by capsule.$$all
                     #       * capsule.$$uuid
