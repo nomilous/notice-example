@@ -32,10 +32,10 @@ exports.start = (callback) ->
                 (next, capsule, traveral) -> 
 
 
-                    capsule.controlCode = 'try to change it'
-                    console.log ALL: capsule.$$all
-                    console.log SERAILIZERS_SEE: capsule
-                    console.log UUID: capsule.$$uuid
+                    # capsule.controlCode = 'try to change it'
+                    # console.log ALL: capsule.$$all
+                    # console.log SERAILIZERS_SEE: capsule
+                    # console.log UUID: capsule.$$uuid
 
                     return next.cancel() if capsule.$$control?
                     next()

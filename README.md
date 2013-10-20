@@ -1,4 +1,4 @@
-how to notice
+how to [notice](https://github.com/nomilous/notice)
 =============
 
 ### pre requisites

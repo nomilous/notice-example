@@ -42,6 +42,6 @@ exports.start = (callback) ->
 
             setInterval (->
 
-                emitter.request 'text'
+                emitter.request 'text', more: 'stuff'
 
             ), 1000
