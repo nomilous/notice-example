@@ -15,7 +15,7 @@
       "packageManager": "npm",
       "remote.origin.url": "git@github.com:nomilous/dinkum.git",
       "HEAD": "refs/heads/develop",
-      "version": "70b5a04d1aa4961a867b7a1079564304690b7b9e"
+      "version": "5f86bdc7734376e5761ac3cb6004d3ec2f9977f5"
     },
     {
       "root": false,
@@ -23,7 +23,7 @@
       "packageManager": "npm",
       "remote.origin.url": "git@github.com:nomilous/notice.git",
       "HEAD": "refs/heads/develop",
-      "version": "d8ababcce010d94ad523bb57f5db45585e02489e"
+      "version": "840b04e54159430e44396f200747612c2341c6ff"
     }
   ]
 }

@@ -32,8 +32,9 @@ exports.start = (callback) ->
             emitter.use
                 title: 'put in a hidden control code'
                 (next, capsule, traversal) -> 
-                    capsule.set
+                    capsule.$$set
                         controlCode: 'XIIMVXVMIIX'
+                        #hidden: false
                         hidden: true
                         protected: true
 

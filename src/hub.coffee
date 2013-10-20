@@ -74,6 +74,9 @@ exports.start = (callback) ->
             #     https://github.com/nomilous/notice/blob/master/src/management/manager.coffee#L156
             #     or thereabouts ('/v1/hubs/:uuid:/cache/**/*')
             # 
+            #   * I have suggested lazyloading because the cache could get quite big and the overhead
+            #     when fetching it ahead of each capsule traversal would counter produce.
+            # 
 
             'preloaded-key': {}
 
