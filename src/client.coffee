@@ -51,7 +51,41 @@ exports.start = (callback) ->
             # watch -n1 curl -su user: :20002/v1/hubs/1/cache/result
             # 
             # watch -n1 curl -su user: :20002/v1/hubs/1/tools/elastic/stats
-            #           # dinkum throttling to 10 concurrent requests into elastic
+            # 
+                                    #           
+                                    # dinkum throttling to 10 concurrent requests into elastic
+                                    # 
+
+            # curl -su user: :20002/v1/hubs
+            # {
+            #   "records": [
+            #     {
+            #       "title": "Message Bus Title",
+            #       "uuid": 1,
+            #       "metrics": {
+            #         "pipeline": {
+            #           "input": {
+            #             "count": 170597
+            #           },
+            #           "processing": {
+            #             "count": 49379    <------------ the resulting backlog in the hubs middleware pipeline
+            #           },
+            #           "output": {
+            #             "count": 121215
+            #           },
+            #           "error": {
+            #             "usr": 0,
+            #             "sys": 0
+            #           },
+            #           "cancel": {
+            #             "usr": 3,
+            #             "sys": 0
+            #           }
+            #         }
+            #       }
+            #     }
+            #   ]
+            # }
             # 
 
 
