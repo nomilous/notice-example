@@ -131,15 +131,15 @@ exports.start = (callback) ->
                 port: 9200
 
 
-            'class-example': 
+            class: 
 
                 #
-                # API: curl -u user: :20002/v1/hubs/1/tools/class-example
+                # API: curl -u user: :20002/v1/hubs/1/tools/class
                 # -------------------------------------------------------
                 # 
-                # * An class example to illustrate the notability api.
-                # * curl -su user: :20002/v1/hubs/1/tools/class-example/exposedProperty/deeper/and/deeper
-                # * curl -su user: :20002/v1/hubs/1/tools/class-example/apiExposedFunction
+                # * An class example to illustrate $$notice api.
+                # * curl -su user: :20002/v1/hubs/1/tools/class/apiProperty
+                # * curl -su user: :20002/v1/hubs/1/tools/class/apiFunction
                 #
 
                 new tools.NoticeableClass
