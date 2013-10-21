@@ -138,6 +138,7 @@ exports.start = (callback) ->
                 # -------------------------------------------------------
                 # 
                 # * An class example to illustrate the notability api.
+                # * curl -su user: :20002/v1/hubs/1/tools/class-example/exposedProperty/deeper/and/deeper
                 # * curl -su user: :20002/v1/hubs/1/tools/class-example/apiExposedFunction
                 #
 
