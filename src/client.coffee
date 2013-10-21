@@ -69,6 +69,10 @@ exports.start = (callback) ->
             #           },
             #           "processing": {
             #             "count": 49379    <------------ the resulting backlog in the hubs middleware pipeline
+            #                                             
+            #                                             # TODO: find the wedge, stopped the inbound, 
+            #                                                     this never reached 0
+            #                                                     a stray exit case... (_grumbles_)
             #           },
             #           "output": {
             #             "count": 121215
