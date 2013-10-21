@@ -45,8 +45,9 @@ exports.start = (callback) ->
 
                 emitter.request 'text', more: 'stuff'
 
-            ), 1
+            ), 1000
 
+            # ), 1
             # 
             # watch -n1 curl -su user: :20002/v1/hubs/1/cache/result
             # 

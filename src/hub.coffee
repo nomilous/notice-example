@@ -82,7 +82,7 @@ exports.start = (callback) ->
             # 
             #   * Also, now exceedingly pleased i did this waffling, it birthed me a steamingly fresh epiphany.
             # 
-            #         * A `Notability` API, ah man,, that tickles me so!
+            #         * A `Noticeability` API
             #         * Examples below
             #         * Still in swaddling tho
             #  
@@ -141,12 +141,12 @@ exports.start = (callback) ->
                 # * curl -su user: :20002/v1/hubs/1/tools/class-example/apiExposedFunction
                 #
 
-                new tools.NotableClass
+                new tools.NoticeableClass
 
 
             'closure-example': 
 
-                tools.NotableClosure.create()
+                tools.NoticeableClosure.create()
 
 
 
