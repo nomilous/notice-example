@@ -38,6 +38,6 @@ dev_start_elastic
 
 ...
 
-^C to stop
+^C to stop (later)
 
 ```
