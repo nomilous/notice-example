@@ -189,7 +189,7 @@ exports.start = (callback) ->
                         path: '/test-database/health'
                         'application/json':
 
-                            hostname: origin.hostname
+                            hostname: origin.context.hostname
                             timestamp: capsule.timestamp
                             memory: capsule     # timestamp is hidden so this serialization
                                                 # does not result in memory.timestamp nesting
