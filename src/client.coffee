@@ -1,4 +1,5 @@
 {CapsuleEmitter} = require './client/capsule_emitter'
+{memoryUsage} = process
 
 exports.start = (callback) -> 
     
@@ -16,6 +17,13 @@ exports.start = (callback) ->
             this: 'is kept on the client side'
             and:  'is available alongside local traversals'
 
+        ticks: 
+            health: 
+                interval: 1000
+            # tick2: 
+            #     interval: 5000
+            # tick3: 
+            #     interval: 10000
 
         connect:
             secret:             '∆'
@@ -29,14 +37,34 @@ exports.start = (callback) ->
 
             return callback error if error?
 
+
             emitter.use
-                title: 'put in a hidden control code'
+                title: 'put in a hidden timestamp'
                 (next, capsule, traversal) -> 
                     capsule.$$set
-                        controlCode: 'XIIMVXVMIIX'
-                        #hidden: false
+                        timestamp: new Date
                         hidden: true
                         protected: true
+
+                    next()
+
+            emitter.use
+                title: 'show ticks'
+                (next, capsule, traversal) ->
+
+
+                    if capsule.$$tick == 'health'
+
+                        {rss, heapTotal, heapUsed} = memoryUsage()
+                        rss = Math.floor(rss / 1024 / 1024 * 100) / 100
+                        heapTotal = Math.floor(heapTotal / 1024 / 1024 * 100) / 100
+                        heapUsed = Math.floor(heapUsed / 1024 / 1024 * 100) / 100
+
+                        emitter.health 'process memory', 
+                            rss: rss
+                            heap:
+                                total: heapTotal
+                                used:  heapUsed
 
                     next()
 

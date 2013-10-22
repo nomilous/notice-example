@@ -177,6 +177,30 @@ exports.start = (callback) ->
 
 
 
+            hub.use 
+
+                title: 'client health'
+                (next, capsule, {origin, tools}) -> 
+
+                    return next() unless capsule.health?
+
+                    tools.elastic.post
+
+                        path: '/test-database/health'
+                        'application/json':
+
+                            hostname: origin.hostname
+                            timestamp: capsule.timestamp
+                            memory: capsule     # timestamp is hidden so this serialization
+                                                # does not result in memory.timestamp nesting
+
+                    .then (r) -> console.log r
+                        
+                    next()
+
+
+
+
 
             hub.use title: 'testing things', (next, capsule, {tools}) -> 
 
@@ -195,45 +219,47 @@ exports.start = (callback) ->
 
                 (next, capsule, {tools, cache}) -> 
 
-                    #
-                    # insert the capsule (as-is) into elastic
-                    # ---------------------------------------
-                    # 
-                    # * hidden properties on the capsule will not be included
-                    # * capsule.$$set propertyName: 'value', hidden: true, protected: true
-                    # * capsule.$$all
-                    # * not listed by capsule.$$all
-                    #       * capsule.$$uuid
-                    #       * capsule.$$hidden
-                    #       * capsule.$$protected 
-                    # 
-
-                    tools.elastic.put 
-
-                        path: '/test-database/test-table/id'
-                        'application/json': capsule
-                        #'application/json': capsule.$$all
-
-                        #
-                        # ask elastic for it
-                        # ------------------
-                        # 
-                        # curl -s :9200/test-database/test-table/id | json
-                        #
 
 
-                    .then (result) -> 
+                    # #
+                    # # insert the capsule (as-is) into elastic
+                    # # ---------------------------------------
+                    # # 
+                    # # * hidden properties on the capsule will not be included
+                    # # * capsule.$$set propertyName: 'value', hidden: true, protected: true
+                    # # * capsule.$$all
+                    # # * not listed by capsule.$$all
+                    # #       * capsule.$$uuid
+                    # #       * capsule.$$hidden
+                    # #       * capsule.$$protected 
+                    # # 
+
+                    # tools.elastic.put 
+
+                    #     path: '/test-database/test-table/id'
+                    #     'application/json': capsule
+                    #     #'application/json': capsule.$$all
+
+                    #     #
+                    #     # ask elastic for it
+                    #     # ------------------
+                    #     # 
+                    #     # curl -s :9200/test-database/test-table/id | json
+                    #     #
 
 
-                        #
-                        # store the response from elastic in the cache
-                        # --------------------------------------------
-                        # 
-                        # curl -u user: :20002/v1/hubs/1/cache/result
-                        #
+                    # .then (result) -> 
 
-                        cache.result = result
-                        next()
+
+                    #     #
+                    #     # store the response from elastic in the cache
+                    #     # --------------------------------------------
+                    #     # 
+                    #     # curl -u user: :20002/v1/hubs/1/cache/result
+                    #     #
+
+                    #     cache.result = result
+                    next()
 
 
 

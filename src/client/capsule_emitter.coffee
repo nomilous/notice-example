@@ -5,3 +5,6 @@ module.exports.CapsuleEmitter = require('notice').client
             #nondescript: true
             nondescript: false
 
+        health: 
+            nondescript: true
+
