@@ -1,5 +1,4 @@
 {CapsuleEmitter} = require './client/capsule_emitter'
-{memoryUsage} = process
 
 exports.start = (callback) -> 
     
@@ -41,6 +40,9 @@ exports.start = (callback) ->
             emitter.use
                 title: 'put in a hidden timestamp'
                 (next, capsule, traversal) -> 
+
+                    console.log capsule
+
                     capsule.$$set
                         timestamp: new Date
                         hidden: true
@@ -48,32 +50,10 @@ exports.start = (callback) ->
 
                     next()
 
-            emitter.use
-                title: 'show ticks'
-                (next, capsule, traversal) ->
-
-
-                    if capsule.$$tick == 'health'
-
-                        # console.log capsule if capsule.$$tick?
-
-                        {rss, heapTotal, heapUsed} = memoryUsage()
-                        rss = Math.floor(rss / 1024 / 1024 * 100) / 100
-                        heapTotal = Math.floor(heapTotal / 1024 / 1024 * 100) / 100
-                        heapUsed = Math.floor(heapUsed / 1024 / 1024 * 100) / 100
-
-                        emitter.health 'process memory', 
-                            rss: rss
-                            heap:
-                                total: heapTotal
-                                used:  heapUsed
-
-                    next()
-
 
             setInterval (->
 
-                emitter.request more: 'stuff'
+                emitter.request()
 
             ), 1000
 
@@ -93,7 +73,7 @@ exports.start = (callback) ->
             #     {
             #       "title": "Message Bus Title",
             #       "uuid": 1,
-            #       "metrics": {
+            #       "stats": {
             #         "pipeline": {
             #           "input": {
             #             "count": 170597

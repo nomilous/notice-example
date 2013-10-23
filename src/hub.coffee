@@ -173,7 +173,7 @@ exports.start = (callback) ->
 
                 (next, capsule, traveral) -> 
 
-                    console.log capsule #if capsule.$$tick?
+                    console.log capsule
 
                     return next.cancel() if capsule.$$control?
                     next()
@@ -222,6 +222,9 @@ exports.start = (callback) ->
                 """
 
                 (next, capsule, {tools, cache}) -> 
+
+                    # console.log capsule.$$all
+                    # console.log capsule
 
 
 
