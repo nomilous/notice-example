@@ -20,6 +20,8 @@ exports.start = (callback) ->
             # probably better for nginx to do this
             #
 
+        ticks: TEST: {}
+
         cache: 
 
             #
@@ -170,6 +172,8 @@ exports.start = (callback) ->
                 """
 
                 (next, capsule, traveral) -> 
+
+                    console.log capsule if capsule.$$tick?
 
                     return next.cancel() if capsule.$$control?
                     next()

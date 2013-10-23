@@ -55,6 +55,8 @@ exports.start = (callback) ->
 
                     if capsule.$$tick == 'health'
 
+                        console.log capsule if capsule.$$tick?
+
                         {rss, heapTotal, heapUsed} = memoryUsage()
                         rss = Math.floor(rss / 1024 / 1024 * 100) / 100
                         heapTotal = Math.floor(heapTotal / 1024 / 1024 * 100) / 100
