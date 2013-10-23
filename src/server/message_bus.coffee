@@ -1,10 +1,16 @@
 module.exports.MessageBus = require('notice').hub
+
+    ticks: 
+        master:
+            interval: 1000
     
     manager: 
         # authenticate: 
         #     username: 'admin'
         #     password: ''
-        authenticate: (username, password, callback) -> callback null, true
+        authenticate: (username, password, callback) -> 
+            console.log AUTHENTICATE: u: username, p: password
+            callback null, {}
         listen: 
             port: 20002
             # 

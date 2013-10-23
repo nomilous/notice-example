@@ -173,7 +173,7 @@ exports.start = (callback) ->
 
                 (next, capsule, traveral) -> 
 
-                    console.log capsule if capsule.$$tick?
+                    console.log capsule #if capsule.$$tick?
 
                     return next.cancel() if capsule.$$control?
                     next()

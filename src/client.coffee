@@ -55,7 +55,7 @@ exports.start = (callback) ->
 
                     if capsule.$$tick == 'health'
 
-                        console.log capsule if capsule.$$tick?
+                        # console.log capsule if capsule.$$tick?
 
                         {rss, heapTotal, heapUsed} = memoryUsage()
                         rss = Math.floor(rss / 1024 / 1024 * 100) / 100
@@ -73,7 +73,7 @@ exports.start = (callback) ->
 
             setInterval (->
 
-                emitter.request 'text', more: 'stuff'
+                emitter.request more: 'stuff'
 
             ), 1000
 
