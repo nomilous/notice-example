@@ -173,11 +173,22 @@ exports.start = (callback) ->
 
                 (next, capsule, traveral) -> 
 
-                    console.log capsule
+                    # console.log capsule
 
                     return next.cancel() if capsule.$$control?
                     next()
 
+
+            hub.use 
+
+                title: 'toggle noisey'
+                description: """
+                curl -u user: localhost:20002/v1/hubs/1/middlewares/2/enable | disable
+                """
+                (next, capsule, traveral) -> 
+
+                    console.log capsule.$$all
+                    next()
 
 
 
