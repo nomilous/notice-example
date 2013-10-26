@@ -59,15 +59,15 @@ exports.start = (callback) ->
 
             # ), 1
             # 
-            # watch -n1 curl -su user: :20002/v1/hubs/1/cache/result
+            # watch -n1 curl -su user: :20002/hubs/1/cache/result
             # 
-            # watch -n1 curl -su user: :20002/v1/hubs/1/tools/elastic/stats
+            # watch -n1 curl -su user: :20002/hubs/1/tools/elastic/stats
             # 
                                     #           
                                     # dinkum throttling to 10 concurrent requests into elastic
                                     # 
 
-            # curl -su user: :20002/v1/hubs
+            # curl -su user: :20002/hubs
             # {
             #   "records": [
             #     {

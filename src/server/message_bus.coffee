@@ -4,7 +4,7 @@ module.exports.MessageBus = require('notice').hub
     #     master:
     #         interval: 1000
     
-    manager: 
+    api: 
         # authenticate: 
         #     username: 'admin'
         #     password: ''
@@ -15,7 +15,7 @@ module.exports.MessageBus = require('notice').hub
                 roles: ['admin']
 
             #
-            # curl -u user: :20002/v1/hubs/1/tools/class/apiFunction
+            # curl -u user: :20002/hubs/1/tools/class/apiFunction
             #
 
         listen: 

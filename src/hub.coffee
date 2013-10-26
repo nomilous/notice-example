@@ -20,12 +20,12 @@ exports.start = (callback) ->
             # probably better for nginx to do this
             #
 
-        #ticks: TEST: {}
+        ticks: TEST: {}
 
         cache: 
 
             #
-            # API: curl -u user: :20002/v1/hubs/1/cache
+            # API: curl -u user: :20002/hubs/1/cache
             # -----------------------------------------
             # 
             # ### Purpose
@@ -59,7 +59,7 @@ exports.start = (callback) ->
             #   #      * This would be especially useful because of the fact that the API
             #   #        can drill into the cache. 
             #   #  
-            #   #        ie.  /v1/hubs/1/cache/persistedComponent/lazyLoadedObject/someThingInIt
+            #   #        ie.  /hubs/1/cache/persistedComponent/lazyLoadedObject/someThingInIt
             #   # 
             #   #        (i ""think"" the mech that does the drilling will not disturb the neigh- 
             #   #           bours on the way down, if not, something will need to be ""done"")
@@ -77,7 +77,7 @@ exports.start = (callback) ->
             #     persisted component and asynchronize accordingly. 
             # 
             #     https://github.com/nomilous/notice/blob/master/src/management/manager.coffee#L156
-            #     or thereabouts ('/v1/hubs/:uuid:/cache/**/*')
+            #     or thereabouts ('/hubs/:uuid:/cache/**/*')
             # 
             #   * I have suggested lazyloading because the cache could get quite big and the overhead
             #     when fetching it ahead of each capsule traversal would counter produce.
@@ -94,7 +94,7 @@ exports.start = (callback) ->
         tools:
 
             #
-            # API: curl -u user: :20002/v1/hubs/1/tools
+            # API: curl -u user: :20002/hubs/1/tools
             # -----------------------------------------
             # 
             # ### Purpose
@@ -107,9 +107,9 @@ exports.start = (callback) ->
 
 
             #
-            # GOOD: watch curl -su user: :20002/v1/hubs/1/tools/elastic/stats
-            # BAD:  watch curl -su user: :20002/v1/hubs/1/tools/elastic
-            # GOOD: watch curl -su user: :20002/v1/hubs/1/tools
+            # GOOD: watch curl -su user: :20002/hubs/1/tools/elastic/stats
+            # BAD:  watch curl -su user: :20002/hubs/1/tools/elastic
+            # GOOD: watch curl -su user: :20002/hubs/1/tools
             #
 
 
@@ -117,7 +117,7 @@ exports.start = (callback) ->
             elastic: Client.create
 
                 #
-                # API: curl -u user: :20002/v1/hubs/1/tools/elastic
+                # API: curl -u user: :20002/hubs/1/tools/elastic
                 # -------------------------------------------------
                 # 
                 # * Provides a configured instance of dinkum http(s) client assigned to
@@ -136,12 +136,12 @@ exports.start = (callback) ->
             class: 
 
                 #
-                # API: curl -u user: :20002/v1/hubs/1/tools/class
+                # API: curl -u user: :20002/hubs/1/tools/class
                 # -------------------------------------------------------
                 # 
                 # * An class example to illustrate $$notice api.
-                # * curl -su user: :20002/v1/hubs/1/tools/class/apiProperty
-                # * curl -su user: :20002/v1/hubs/1/tools/class/apiFunction
+                # * curl -su user: :20002/hubs/1/tools/class/apiProperty
+                # * curl -su user: :20002/hubs/1/tools/class/apiFunction
                 #
 
                 new tools.NoticeableClass
@@ -183,7 +183,7 @@ exports.start = (callback) ->
 
                 title: 'toggle noisey'
                 description: """
-                curl -u user: localhost:20002/v1/hubs/1/middlewares/2/enable | disable
+                curl -u user: localhost:20002/hubs/1/middlewares/2/enable | disable
                 """
                 (next, capsule, traveral) -> 
 
@@ -273,7 +273,7 @@ exports.start = (callback) ->
                     #     # store the response from elastic in the cache
                     #     # --------------------------------------------
                     #     # 
-                    #     # curl -u user: :20002/v1/hubs/1/cache/result
+                    #     # curl -u user: :20002/hubs/1/cache/result
                     #     #
 
                     #     cache.result = result
