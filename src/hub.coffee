@@ -20,7 +20,7 @@ exports.start = (callback) ->
             # probably better for nginx to do this
             #
 
-        ticks: TEST: {}
+        #ticks: TEST: {}
 
         cache: 
 
