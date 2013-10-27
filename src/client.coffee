@@ -43,7 +43,7 @@ exports.start = (callback) ->
 
                     console.log capsule
 
-                    capsule.$$set
+                    capsule.$set
                         timestamp: new Date
                         hidden: true
                         protected: true

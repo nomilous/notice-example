@@ -42,7 +42,7 @@ exports.start = (callback) ->
             # API: curl -u user: :20002/hubs/1/tools/class
             # -------------------------------------------------------
             # 
-            # * An class example to illustrate $$notice api.
+            # * An class example to illustrate $notice api.
             # * curl -su user: :20002/hubs/1/tools/class/apiProperty
             # * curl -su user: :20002/hubs/1/tools/class/apiFunction
             #
@@ -57,17 +57,17 @@ exports.start = (callback) ->
 
             # # 
             # # * hidden properties on the capsule will not be included
-            # # * capsule.$$set propertyName: 'value', hidden: true, protected: true
-            # # * capsule.$$all
-            # # * not listed by capsule.$$all
-            # #       * capsule.$$uuid
-            # #       * capsule.$$hidden
-            # #       * capsule.$$protected 
+            # # * capsule.$set propertyName: 'value', hidden: true, protected: true
+            # # * capsule.$all
+            # # * not listed by capsule.$all
+            # #       * capsule.$uuid
+            # #       * capsule.$hidden
+            # #       * capsule.$protected 
             # # 
 
             hub.use title: 'test', (next, capsule, traversal) -> 
 
-                console.log capsule.$$all
+                console.log capsule.$all
                 next()
 
             callback null, hub
