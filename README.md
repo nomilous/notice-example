@@ -18,7 +18,7 @@ npm install
 Walkthrough / Possibility Tour
 ------------------------------
 
-
+* no - see [spec/walkthrough](../notice/spec/walkthrough) in notice repo
 
 
 

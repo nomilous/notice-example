@@ -21,7 +21,7 @@ exports.start = (callback) ->
             #
 
 
-        ticks: {}
+        ticks: one: {}
         cache: {}
 
 
@@ -64,6 +64,11 @@ exports.start = (callback) ->
             # #       * capsule.$$hidden
             # #       * capsule.$$protected 
             # # 
+
+            hub.use title: 'test', (next, capsule, traversal) -> 
+
+                console.log capsule.$$all
+                next()
 
             callback null, hub
 
